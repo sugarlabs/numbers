@@ -1,0 +1,15 @@
+24.3
+
+* New Sugar-compliant icon
+
+24.1
+
+* No sharing
+* Fix problem with non-Sugar launch
+* pep8 cleanup
+* Monochrome icons
+
+24
+
+* Aggressive Sugar stylizing
+* Handle screen rotation

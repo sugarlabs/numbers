@@ -1,0 +1,9 @@
+[Activity]
+name = Numbers
+activity_version = 26.3
+host_version = 1
+bundle_id = org.laptop.community.Numbers
+icon = activity
+show_launcher = yes
+exec = sugar-activity activity.PeterActivity
+summary = "Addition and multiplication game"

@@ -1,0 +1,28 @@
+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd' [
+	<!ENTITY stroke_color "#000">
+	<!ENTITY fill_color "#eee">
+]><svg height="55px" viewBox="0 0 45 45" width="55px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5" stroke="&stroke_color;" fill="&fill_color;">
+ <g fill="none" font-family="Times New Roman" font-size="16" id="Document" stroke="black" transform="scale(1 -1)">
+  <g id="Spread" transform="translate(0 -41.25)">
+   <g id="Page background">
+    <rect fill="none" height="41.249" stroke="none" stroke-linejoin="bevel" stroke-miterlimit="79.8403193612775" stroke-width="0" width="41.249" x="0.001" y="0.001"/>
+   </g>
+   <g id="Layer 3">
+    <ellipse fill="&fill_color;" rx="15.124" ry="15.124" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.135" transform="translate(20.67 20.535) rotate(-41.3331)"/>
+   </g>
+   <g id="Layer 1">
+    <ellipse rx="17.882" ry="17.882" stroke="&stroke_color;" stroke-miterlimit="79.8403193612775" stroke-width="5.482" transform="translate(20.67 20.535) rotate(-20.9565)"/>
+    <text fill="&stroke_color;" font-family="Arial" font-size="26.801" font-weight="bold" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.092" transform="translate(13.414 11.073) scale(1 -1)" xml:space="preserve"><tspan x="0" y="0">9</tspan></text>
+    <ellipse rx="11.555" ry="11.555" stroke="&stroke_color;" stroke-miterlimit="79.8403193612775" stroke-width="1.694" transform="translate(20.67 20.535) rotate(-20.9524)"/>
+    <path d="M 18.015,36.063 L 18.586,32.45 L 22.135,32.45 L 22.642,36.19 L 18.015,36.063 Z" fill="&stroke_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.135"/>
+    <path d="M 18.015,4.834 L 18.586,8.446 L 22.135,8.446 L 22.642,4.707 L 18.015,4.834 Z" fill="&stroke_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.135"/>
+    <path d="M 35.943,18.135 L 32.331,18.705 L 32.331,22.255 L 36.07,22.762 L 35.943,18.135 Z" fill="&stroke_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.135"/>
+    <path d="M 5.484,18.135 L 9.097,18.705 L 9.097,22.255 L 5.358,22.762 L 5.484,18.135 Z" fill="&stroke_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.135"/>
+    <path d="M 8.213,29.373 L 11.17,27.222 L 13.68,29.732 L 11.394,32.735 L 8.213,29.373 Z" fill="&stroke_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.135"/>
+    <path d="M 33.721,29.373 L 30.764,27.222 L 28.254,29.732 L 30.539,32.735 L 33.721,29.373 Z" fill="&stroke_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.135"/>
+    <path d="M 33.721,11.309 L 30.764,13.46 L 28.254,10.95 L 30.539,7.947 L 33.721,11.309 Z" fill="&stroke_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.135"/>
+    <path d="M 7.442,11.309 L 10.399,13.46 L 12.909,10.95 L 10.624,7.947 L 7.442,11.309 Z" fill="&stroke_color;" marker-end="none" marker-start="none" stroke="none" stroke-miterlimit="79.8403193612775" stroke-width="0.135"/>
+   </g>
+  </g>
+ </g>
+</svg>
