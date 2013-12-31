@@ -12,17 +12,17 @@
 
 from gettext import gettext as _
 import logging
-import gtk
+from gi.repository import Gtk
+from gi.repository import Gdk
 import pygame
 
-from sugar.activity import activity
-from sugar.graphics.toolbarbox import ToolbarBox
-from sugar.activity.widgets import ActivityToolbarButton
-from sugar.activity.widgets import StopButton
-from sugar.graphics.toolbarbox import ToolbarButton
-from sugar.graphics.toolbutton import ToolButton
-from sugar.graphics.style import GRID_CELL_SIZE
-from sugar import profile
+from sugar3.activity import activity
+from sugar3.graphics.toolbarbox import ToolbarBox
+from sugar3.activity.widgets import ActivityToolbarButton
+from sugar3.activity.widgets import StopButton
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.graphics.style import GRID_CELL_SIZE
+from sugar3 import profile
 
 import sugargame.canvas
 import load_save
@@ -63,34 +63,31 @@ class PeterActivity(activity.Activity):
         green.connect('clicked', self._button_cb, 'green')
         green.show()
 
-        separator = gtk.SeparatorToolItem()
+        separator = Gtk.SeparatorToolItem()
         separator.props.draw = True
         toolbox.toolbar.insert(separator, -1)
         separator.show()
 
-        label = gtk.Label('')
+        label = Gtk.Label('')
         label.set_use_markup(True)
         label.show()
-        labelitem = gtk.ToolItem()
+        labelitem = Gtk.ToolItem()
         labelitem.add(label)
         toolbox.toolbar.insert(labelitem, -1)
         labelitem.show()
 
-        separator = gtk.SeparatorToolItem()
+        separator = Gtk.SeparatorToolItem()
         separator.props.draw = False
         separator.set_expand(True)
         toolbox.toolbar.insert(separator, -1)
         separator.show()
 
-        stop = ToolButton('activity-stop')
+        stop = StopButton(self)
         toolbox.toolbar.insert(stop, -1)
-        stop.props.tooltip = _('Stop')
-        stop.props.accelerator = '<Ctrl>Q'
-        stop.connect('clicked', self.__stop_button_clicked_cb, activity)
         stop.show()
 
         toolbox.show()
-        self.set_toolbox(toolbox)
+        self.set_toolbar_box(toolbox)
 
         # Create the game instance.
         self.game = Numbers.Numbers(colors, sugar=True)
@@ -104,22 +101,20 @@ class PeterActivity(activity.Activity):
         self.game.set_buttons(green)
         self.game.set_label(label)
 
-        gtk.gdk.screen_get_default().connect('size-changed',
+        Gdk.Screen.get_default().connect('size-changed',
                                              self.__configure_cb)
 
         # Start the game running.
         self._pygamecanvas.run_pygame(self.game.run)
 
-    def __stop_button_clicked_cb(self, button, activity):
-        pygame.display.quit()
-        pygame.quit()
-        self.close()
+    def get_preview(self):
+        return self._pygamecanvas.get_preview()
 
     def __configure_cb(self, event):
         ''' Screen size has changed '''
         logging.debug(self._pygamecanvas.get_allocation())
-        pygame.display.set_mode((gtk.gdk.screen_width(),
-                                 gtk.gdk.screen_height() - GRID_CELL_SIZE),
+        pygame.display.set_mode((Gdk.Screen.width(),
+                                 Gdk.Screen.height() - GRID_CELL_SIZE),
                                 pygame.RESIZABLE)
 
         self.game.reload()
@@ -150,12 +145,11 @@ class PeterActivity(activity.Activity):
                                          self._level_stepper_down_cb)
         self._level_stepper_down.show()
 
-        self._adjustment = gtk.Adjustment(
+        self._adjustment = Gtk.Adjustment.new(
             1, self.LOWER, self.UPPER, 1, 5, 0)
         self._adjustment.connect('value_changed', self._level_change_cb)
-        self._level_range = gtk.HScale(self._adjustment)
+        self._level_range = Gtk.HScale.new(self._adjustment)
         self._level_range.set_draw_value(False)
-        self._level_range.set_update_policy(gtk.UPDATE_CONTINUOUS)
         self._level_range.set_size_request(120, 15)
         self._level_range.show()
 
@@ -164,7 +158,7 @@ class PeterActivity(activity.Activity):
         self._level_stepper_up.connect('clicked', self._level_stepper_up_cb)
         self._level_stepper_up.show()
 
-        self._level_range_tool = gtk.ToolItem()
+        self._level_range_tool = Gtk.ToolItem()
         self._level_range_tool.add(self._level_range)
         self._level_range_tool.show()
 
@@ -188,6 +182,6 @@ class PeterActivity(activity.Activity):
             self._level_range.set_value(self.LOWER)
 
     def _level_change_cb(self, button=None):
-        logging.debug(self._adjustment.value)
-        self.game.level1(level=self._adjustment.value)
+        logging.debug(self._adjustment.get_value())
+        self.game.level1(level=self._adjustment.get_value())
         return True

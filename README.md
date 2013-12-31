@@ -1,4 +1,4 @@
 numbers
 =======
 
-Clone of Peter Hewitt's numbers game
+Port to gtk3 of Numbers activity
