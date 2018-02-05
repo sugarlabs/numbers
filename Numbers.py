@@ -11,8 +11,11 @@
 """
 import sys
 import random
-import gtk
 import pygame
+
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
 
 import g
 import utils
@@ -312,16 +315,16 @@ class Numbers:
         return False
 
     def gen_nos(self):
-        l = []
+        num_list = []
         for i in range(g.nos_k):
-            l.append(random.randint(1, g.max_n))
-        return l
+            num_list.append(random.randint(1, g.max_n))
+        return num_list
 
     def gen_aim(self):
-        l = utils.copy_list(g.nos)
-        #shuffle nos
-        lt = utils.shuffle(l)
-        #generate answer
+        num_list = utils.copy_list(g.nos)
+        # shuffle nos
+        lt = utils.shuffle(num_list)
+        # generate answer
         buff = ""
         r = random.randint(1, 2)  # for level 1
         while True:
@@ -425,11 +428,11 @@ class Numbers:
         if level is not None:
             g.level = level
         g.nos_k = 3
-        l = g.level
-        if l > 5:
+        num_list = g.level
+        if num_list > 5:
             g.nos_k = 4
-            l -= 5
-        g.max_n = l + 4
+            num_list -= 5
+        g.max_n = num_list + 4
         self.new1()
 
     def flush_queue(self):
@@ -437,13 +440,19 @@ class Numbers:
         while flushing:
             flushing = False
             if self.journal:
-                while gtk.events_pending():
-                    gtk.main_iteration()
+                while Gtk.events_pending():
+                    Gtk.main_iteration()
             for event in pygame.event.get():
                 flushing = True
 
     def run(self, restore=False):
         self.black = False
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return
+            elif event.type == pygame.VIDEORESIZE:
+                pygame.display.set_mode(event.size, pygame.RESIZABLE)
+                break
         g.init()
         if not self.journal:
             utils.load()
@@ -481,8 +490,8 @@ class Numbers:
         while going:
             if self.journal:
                 # Pump GTK messages.
-                while gtk.events_pending():
-                    gtk.main_iteration()
+                while Gtk.events_pending():
+                    Gtk.main_iteration()
 
             # Pump PyGame messages.
             for event in pygame.event.get():

@@ -10,7 +10,6 @@
 """
 import os
 import sys
-import copy
 import random
 import logging
 import pygame
@@ -18,7 +17,7 @@ import pygame
 import g
 import load_save
 
-#constants
+# constants
 RED, BLUE, GREEN = (255, 0, 0), (0, 0, 255), (0, 255, 0)
 BLACK, WHITE = (0, 0, 0), (255, 255, 255)
 CYAN, ORANGE, CREAM = (0, 255, 255), (255, 165, 0), (255, 255, 192)

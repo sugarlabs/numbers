@@ -169,4 +169,3 @@ def sx(f):  # scale x function
 
 def sy(f):  # scale y function
     return int(f * factor)
-
