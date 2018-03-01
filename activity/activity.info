@@ -8,3 +8,4 @@ show_launcher = yes
 exec = sugar-activity activity.PeterActivity
 summary = "Addition and multiplication game"
 category = maths
+license = GPLv3+
