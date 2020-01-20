@@ -9,3 +9,4 @@ exec = sugar-activity activity.PeterActivity
 summary = "Addition and multiplication game"
 category = maths
 license = GPLv3+
+repository = https://github.com/sugarlabs/numbers.git
