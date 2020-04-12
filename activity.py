@@ -191,5 +191,5 @@ class PeterActivity(activity.Activity):
 
     def _level_change_cb(self, button=None):
         logging.debug(self._adjustment.get_value())
-        self.game.level1(level=self._adjustment.get_value())
+        self.game.level1(level=int(self._adjustment.get_value()))
         return True
