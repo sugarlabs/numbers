@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # Numbers.py
 """
     Copyright (C) 2010  Peter Hewitt
@@ -79,7 +79,8 @@ class Numbers:
                 g.screen, str(g.best), g.font2, g.best_c, utils.ORANGE)
 
     # returns x of right edge
-    def display_n(self, n, (x, y), display=True, glow=False, pale=False):
+    def display_n(self, n, coordinates, display=True, glow=False, pale=False):
+        (x, y) = coordinates
         s = str(n)
         for i in range(len(s)):
             n1 = int(s[i: i + 1])
@@ -93,7 +94,8 @@ class Numbers:
             x += g.n[n1].get_width() + g.sp
         return x - g.sp
 
-    def display_n_glow(self, n, (cx, cy)):  # for target
+    def display_n_glow(self, n, coordinates):  # for target
+        (cx, cy) = coordinates
         w = self.display_n(n, (0, 0), False)
         extra_w_for_glow = g.n_glow[0].get_width() - g.n[0].get_width()
         x = cx - (w + extra_w_for_glow) / 2

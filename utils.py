@@ -80,7 +80,7 @@ def load_image(file1, alpha=False, subdir=''):  # eg subdir = 'glow'
     try:
         img = pygame.image.load(fname)
     except:
-        print "Peter says: Can't find " + fname
+        print("Peter says: Can't find ", fname)
         exit()
     if alpha:
         img = img.convert_alpha()
@@ -116,7 +116,8 @@ def shuffle(lst):
     return lt
 
 
-def centre_blit(screen, img, (cx, cy), angle=0):  # rotation is clockwise
+def centre_blit(screen, img, coordinates, angle=0):  # rotation is clockwise
+    (cx, cy) = coordinates
     img1 = img
     if angle != 0:
         img1 = pygame.transform.rotate(img, -angle)
@@ -124,7 +125,9 @@ def centre_blit(screen, img, (cx, cy), angle=0):  # rotation is clockwise
     screen.blit(img1, (cx - rect.width / 2, cy - rect.height / 2))
 
 
-def text_blit(screen, s, font, (cx, cy), (r, g, b)):
+def text_blit(screen, s, font, coordinates, color):
+    (cx, cy) = coordinates
+    (r, g, b) = color
     text = font.render(s, True, (0, 0, 0))
     rect = text.get_rect()
     rect.centerx = cx + 2
@@ -138,7 +141,9 @@ def text_blit(screen, s, font, (cx, cy), (r, g, b)):
     return rect
 
 
-def text_blit1(screen, s, font, (x, y), (r, g, b)):
+def text_blit1(screen, s, font, coordinates, color):
+    (x, y) = coordinates
+    (r, g, b) = color
     text = font.render(s, True, (r, g, b))
     rect = text.get_rect()
     rect.x = x
@@ -149,7 +154,8 @@ def text_blit1(screen, s, font, (x, y), (r, g, b)):
 # m is the message
 # d is the # of pixels in the border around the text
 # (cx, cy)  =  coords centre - (0, 0) means use screen centre
-def message(screen, font, m, (cx, cy)=(0, 0), d=20):
+def message(screen, font, m, coordinates=(0, 0), d=20):
+    (cx, cy) = coordinates
     if m != '':
         if pygame.font:
             text = font.render(m, True, (255, 255, 255))
@@ -170,7 +176,8 @@ def message(screen, font, m, (cx, cy)=(0, 0), d=20):
             screen.blit(text, rect)
 
 
-def mouse_on_img(img, (x, y)):  # x, y = top left
+def mouse_on_img(img, coordinates):  # x, y = top left
+    (x, y) = coordinates
     w = img.get_width()
     h = img.get_height()
     mx, my = g.pos
@@ -191,12 +198,14 @@ def mouse_on_img(img, (x, y)):  # x, y = top left
     return True
 
 
-def mouse_on_img1(img, (cx, cy)):
+def mouse_on_img1(img, coordinates):
+    (cx, cy) = coordinates
     xy = centre_to_top_left(img, (cx, cy))
     return mouse_on_img(img, xy)
 
 
-def mouse_on_img_rect(img, (cx, cy)):
+def mouse_on_img_rect(img, coordinates):
+    (cx, cy) = coordinates
     w2 = img.get_width() / 2
     h2 = img.get_height() / 2
     x1 = cx - w2
@@ -238,8 +247,9 @@ def display_score():
                     (x - d + g.sy(.05), y + h / 2 - g.sy(.2)))
 
 
-def display_number(n, (cx, cy), font, colour=BLACK, bgd=None,
+def display_number(n, coordinates, font, colour=BLACK, bgd=None,
                    outline_font=None):
+    (cx, cy) = coordinates
     if pygame.font:
         if bgd is None:
             text = font.render(str(n), True, colour)
@@ -251,20 +261,23 @@ def display_number(n, (cx, cy), font, colour=BLACK, bgd=None,
         centre_blit(g.screen, text, (cx, cy))
 
 
-def display_number1(n, (x, cy), font, colour=BLACK):
+def display_number1(n, coordinates, font, colour=BLACK):
+    (x, cy) = coordinates
     if pygame.font:
         text = font.render(str(n), True, colour)
         y = cy - text.get_height() / 2
         g.screen.blit(text, (x, y))
 
 
-def top_left_to_centre(img, (x, y)):
+def top_left_to_centre(img, coordinates):
+    (x, y) = coordinates
     cx = x + img.get_width() / 2
     cy = y + img.get_height() / 2
     return (cx, cy)
 
 
-def centre_to_top_left(img, (cx, cy)):
+def centre_to_top_left(img, coordinates):
+    (cx, cy) = coordinates
     x = cx - img.get_width() / 2
     y = cy - img.get_height() / 2
     return (x, y)
