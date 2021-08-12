@@ -1,3 +1,14 @@
+27
+
+* Port to python3 (Sourabha G)
+* Fix Value Error due to non-integer stop for randrange (Saumya Mishra)
+* Add repository metadata (Ayush Nawal)
+* Update readme (Ayush Nawal)
+* Update sugargame to v1.3 (Ayush Nawal)
+* Fix license metadata (James Cameron)
+* Port to GTK +3, Sugargame v1.2, Sugar3 (Rahul Bothra)
+* Add categories and screensots for the New ASLO (@samdroid-apps)
+
 24.3
 
 * New Sugar-compliant icon
