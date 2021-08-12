@@ -1,6 +1,6 @@
 [Activity]
 name = Numbers
-activity_version = 26.3
+activity_version = 27
 host_version = 1
 bundle_id = org.laptop.community.Numbers
 icon = activity
