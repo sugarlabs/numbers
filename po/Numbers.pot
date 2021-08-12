@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-12 14:53-0400\n"
+"POT-Creation-Date: 2021-08-12 14:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,30 +21,18 @@ msgstr ""
 msgid "Numbers"
 msgstr ""
 
-#: activity.py:62
+#: activity/activity.info:3
+msgid "\"Addition and multiplication game\""
+msgstr ""
+
+#: activity.py:71
 msgid "Run"
 msgstr ""
 
-#: activity.py:87 dist/Numbers.activity/activity.py:76
-msgid "Stop"
-msgstr ""
-
-#: activity.py:148
+#: activity.py:149
 msgid "Easier"
 msgstr ""
 
-#: activity.py:163
+#: activity.py:165
 msgid "Harder"
-msgstr ""
-
-#: dist/Numbers.activity/activity.py:52
-msgid "Draw"
-msgstr ""
-
-#: dist/Numbers.activity/activity.py:137
-msgid "Slow down"
-msgstr ""
-
-#: dist/Numbers.activity/activity.py:152
-msgid "Speed up"
 msgstr ""
