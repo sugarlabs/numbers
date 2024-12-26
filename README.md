@@ -17,7 +17,7 @@ Numbers is not part of the Sugar desktop, but can be added. Please refer to;
 
 * [How to Get Sugar on sugarlabs.org](https://sugarlabs.org/),
 * [How to use Sugar](https://help.sugarlabs.org/),
-* [Download Numbers](https://activities.sugarlabs.org/en-US/sugar/addon/4336).
+* [Download Numbers](https://v4.activities.sugarlabs.org/app/org.laptop.community.Numbers.html).
 
 Reporting Bugs
 --------------
